@@ -16,12 +16,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!--<activity-->
-        <!--android:name=".ScrollHideListView"-->
-        <!--android:theme="@style/AppTheme1" />-->
-        <!--<activity android:name=".FlexibleListViewTest" />-->
-        <!--<activity android:name=".ChatItemListViewTest" />-->
-        <!--<activity android:name=".FocusListViewTest" />-->
+        <activity
+        android:name=".ScrollHideListView"
+        android:theme="@style/AppTheme1" />
+        <activity android:name=".FlexibleListViewTest" />
+        <activity android:name=".ChatItemListViewTest" />
+        <activity android:name=".FocusListViewTest" />
         <activity android:name="com.miraclewong.mylistview.NotifyTest" />
     </application>
 

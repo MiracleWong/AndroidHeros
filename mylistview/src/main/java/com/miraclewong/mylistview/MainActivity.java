@@ -15,26 +15,25 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
     }
 
-
     public void btnViewHolder(View view) {
         startActivity(new Intent(this, NotifyTest.class));
     }
-//
-//    public void btnChatItem(View view) {
-//        startActivity(new Intent(this, ChatItemListViewTest.class));
-//    }
-//
-//    public void btnScrollHideListView(View view) {
-//        startActivity(new Intent(this, ScrollHideListView.class));
-//    }
-//
-//    public void btnFlexible(View view) {
-//        startActivity(new Intent(this, FlexibleListViewTest.class));
-//    }
-//
-//    public void btnFocus(View view) {
-//        startActivity(new Intent(this, FocusListViewTest.class));
-//    }
+
+    public void btnChatItem(View view) {
+        startActivity(new Intent(this, ChatItemListViewTest.class));
+    }
+
+    public void btnScrollHideListView(View view) {
+        startActivity(new Intent(this, ScrollHideListView.class));
+    }
+
+    public void btnFlexible(View view) {
+        startActivity(new Intent(this, FlexibleListViewTest.class));
+    }
+
+    public void btnFocus(View view) {
+        startActivity(new Intent(this, FocusListViewTest.class));
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
