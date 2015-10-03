@@ -1,1 +1,1 @@
-include ':app', ':mylistview'
+include ':app', ':mylistview', ':recyclerviewtest', ':game2048', ':systemwidget'

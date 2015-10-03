@@ -10,7 +10,10 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/game2048" />
             <option value="$PROJECT_DIR$/mylistview" />
+            <option value="$PROJECT_DIR$/recyclerviewtest" />
+            <option value="$PROJECT_DIR$/systemwidget" />
           </set>
         </option>
       </GradleProjectSettings>
