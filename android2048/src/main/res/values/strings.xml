@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Android2048</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="score">Score</string>
+</resources>
