@@ -78,6 +78,7 @@ public class GameView extends GridLayout {
     }
 
     public void startGame(){
+        MainActivity.getMainActivity().clearScore();
         for (int y = 0; y < 4; y++) {
             for (int x = 0; x < 4; x++) {
                 cardsMap[x][y].setNum(0);
@@ -119,16 +120,115 @@ public class GameView extends GridLayout {
     private void swipeLeft(){
         System.out.println("left");
 
+        boolean merge = false;
+        for (int y = 0; y < 4; y++) {
+            for (int x = 0; x < 4; x++) {
+                // 从当前的位置向右遍历
+                for (int x1 = x+1; x1 < 4; x1++) {
+                    if (cardsMap[x1][y].getNum() > 0){
+                        if (cardsMap[x][y].getNum() <= 0){
+                            cardsMap[x][y].setNum(cardsMap[x1][y].getNum());
+                            cardsMap[x1][y].setNum(0);
+                            x--;
+                            merge =true;
+                        }else if (cardsMap[x][y].equals(cardsMap[x1][y])){
+                            cardsMap[x][y].setNum(cardsMap[x][y].getNum() * 2);
+                            cardsMap[x1][y].setNum(0);
+                            MainActivity.getMainActivity().addScore(cardsMap[x][y].getNum());
+                            merge = true;
+                        }
+                        break;
+                    }
+                }
+            }
+        }
+        if (merge){
+            addRandomNum();
+        }
     }
     private void swipeRight(){
+        boolean merge = false;
         System.out.println("right");
-
+        for (int y = 0; y < 4; y++) {
+            for (int x = 3; x >= 0; x--) {
+                // 从当前的位置向右遍历
+                for (int x1 = x-1; x1 >= 0; x1--) {
+                    if (cardsMap[x1][y].getNum() > 0){
+                        if (cardsMap[x][y].getNum() <= 0){
+                            cardsMap[x][y].setNum(cardsMap[x1][y].getNum());
+                            cardsMap[x1][y].setNum(0);
+                            x++;
+                            merge = true;
+                        }else if (cardsMap[x][y].equals(cardsMap[x1][y])){
+                            cardsMap[x][y].setNum(cardsMap[x][y].getNum() * 2);
+                            cardsMap[x1][y].setNum(0);
+                            MainActivity.getMainActivity().addScore(cardsMap[x][y].getNum());
+                            merge = true;
+                        }
+                        break;
+                    }
+                }
+            }
+        }
+        if (merge){
+            addRandomNum();
+        }
     }
     private void swipeUp(){
+        boolean merge = false;
         System.out.println("up");
+        for (int x = 0; x < 4; x++) {
+            for (int y = 0; y < 4; y++) {
+                // 从当前的位置向右遍历
+                for (int y1 = y+1; y1 < 4; y1++) {
+                    if (cardsMap[x][y1].getNum() > 0){
+                        if (cardsMap[x][y].getNum() <= 0){
+                            cardsMap[x][y].setNum(cardsMap[x][y1].getNum());
+                            cardsMap[x][y1].setNum(0);
+                            y--;
+                            merge = true;
+                        }else if (cardsMap[x][y].equals(cardsMap[x][y1])){
+                            cardsMap[x][y].setNum(cardsMap[x][y].getNum() * 2);
+                            cardsMap[x][y1].setNum(0);
+                            MainActivity.getMainActivity().addScore(cardsMap[x][y].getNum());
+                            merge = true;
+                        }
+                        break;
+                    }
+                }
+            }
+        }
+        if (merge){
+            addRandomNum();
+        }
     }
     private void swipeDown(){
+        boolean merge = false;
         System.out.println("down");
+        for (int x = 0; x < 4; x++) {
+            for (int y = 3; y >= 0; y--) {
+                // 从当前的位置向下遍历
+                for (int y1 = y-1; y1 >= 0; y1--) {
+                    if (cardsMap[x][y1].getNum() > 0){
+                        if (cardsMap[x][y].getNum() <= 0){
+                            cardsMap[x][y].setNum(cardsMap[x][y1].getNum());
+                            cardsMap[x][y1].setNum(0);
+                            y++;
+                            merge = true;
+                        }else if (cardsMap[x][y].equals(cardsMap[x][y1])){
+                            cardsMap[x][y].setNum(cardsMap[x][y].getNum() * 2);
+                            cardsMap[x][y1].setNum(0);
+                            MainActivity.getMainActivity().addScore(cardsMap[x][y].getNum());
+                            merge = true;
+                        }
+                        break;
+                    }
+                }
+            }
+        }
+        if (merge){
+            addRandomNum();
+        }
     }
 
     private Card[][] cardsMap = new Card[4][4];
