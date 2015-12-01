@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/android2048/android2048.iml" filepath="$PROJECT_DIR$/android2048/android2048.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/game2048/game2048.iml" filepath="$PROJECT_DIR$/game2048/game2048.iml" />
+      <module fileurl="file://$PROJECT_DIR$/imageshape/imageshape.iml" filepath="$PROJECT_DIR$/imageshape/imageshape.iml" />
       <module fileurl="file://$PROJECT_DIR$/mylistview/mylistview.iml" filepath="$PROJECT_DIR$/mylistview/mylistview.iml" />
       <module fileurl="file://$PROJECT_DIR$/recyclerviewtest/recyclerviewtest.iml" filepath="$PROJECT_DIR$/recyclerviewtest/recyclerviewtest.iml" />
       <module fileurl="file://$PROJECT_DIR$/systemwidget/systemwidget.iml" filepath="$PROJECT_DIR$/systemwidget/systemwidget.iml" />

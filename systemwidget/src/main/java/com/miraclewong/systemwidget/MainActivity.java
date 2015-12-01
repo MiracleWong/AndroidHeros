@@ -46,7 +46,7 @@ public class MainActivity extends Activity {
         startActivity(mIntent);
     }
 
-//    public void btnTopBar(View view) {
-////        startActivity(new Intent(this, TopBarTest.class));
-////    }
+    public void btnTopBar(View view) {
+        startActivity(new Intent(this, TopBarTest.class));
+    }
 }

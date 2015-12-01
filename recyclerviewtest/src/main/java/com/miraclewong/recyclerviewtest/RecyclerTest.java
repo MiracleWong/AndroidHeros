@@ -8,9 +8,11 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,6 +58,7 @@ public class RecyclerTest extends Activity {
                                     new GridLayoutManager(
                                             RecyclerTest.this, 3));
                         } else if (position == 2) {
+                            mRcList.setLayoutManager(new StaggeredGridLayoutManager(3, 3));
                         }
                     }
 
@@ -85,6 +88,7 @@ public class RecyclerTest extends Activity {
                                     .setDuration(500).start();
                         }
                     }).start();
+                    Toast.makeText(RecyclerTest.this, "第" + (position + 1) + "个",Toast.LENGTH_SHORT).show();
                 }
             });
     }
@@ -102,6 +106,8 @@ public class RecyclerTest extends Activity {
         if (position > 0) {
             mData.remove(position - 1);
             mAdapter.notifyDataSetChanged();
+        }else {
+            Toast.makeText(RecyclerTest.this,"不要删除了",Toast.LENGTH_SHORT).show();
         }
     }
 }

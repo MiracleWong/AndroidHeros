@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".MyViewTest"></activity>
+        <activity android:name=".TopBarTest"></activity>
     </application>
 
 </manifest>

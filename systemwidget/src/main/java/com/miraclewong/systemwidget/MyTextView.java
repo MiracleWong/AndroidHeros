@@ -56,6 +56,5 @@ public class MyTextView extends View {
         super.onDraw(canvas);
         canvas.restore();
 
-
     }
 }

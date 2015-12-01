@@ -5,13 +5,14 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.util.AttributeSet;
 import android.util.Log;
-import android.view.View;
+import android.view.MotionEvent;
+import android.widget.TextView;
 
 /**
  * 自定的View
  * Created by miraclewong on 15/10/3.
  */
-public class TeachingView extends View {
+public class TeachingView extends TextView {
 
     public TeachingView(Context context) {
         super(context);
@@ -32,8 +33,13 @@ public class TeachingView extends View {
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        setMeasuredDimension(measureWidth(heightMeasureSpec), measureHeight(heightMeasureSpec));
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
     }
+
+    //    @Override
+//    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+//        setMeasuredDimension(measureWidth(widthMeasureSpec), measureHeight(heightMeasureSpec));
+//    }
 
     private int measureHeight(int measureSpec) {
         int result = 0;
@@ -70,9 +76,20 @@ public class TeachingView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        canvas.drawColor(Color.GRAY);
+        canvas.drawColor(Color.WHITE);
         int width = getWidth();
         int height = getHeight();
         Log.d("xys", "width : " + width + " height : " + height);
+    }
+
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        return super.onTouchEvent(event);
+    }
+
+    @Override
+    protected void onSizeChanged(int w, int h, int oldw, int oldh) {
+        super.onSizeChanged(w, h, oldw, oldh);
     }
 }

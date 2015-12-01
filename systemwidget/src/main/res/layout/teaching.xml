@@ -5,6 +5,8 @@
     android:orientation="vertical">
 
     <com.miraclewong.systemwidget.TeachingView
+        android:contentDescription="@string/action_settings"
+        android:text="Hello World"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 </LinearLayout>

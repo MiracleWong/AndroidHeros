@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <!-- 填充颜色-->
+            <solid android:color="#33444444"/>
+            <!-- 设置按钮的四个角为弧形-->
+            <corners android:radius="5dp"/>
+
+            <padding
+                android:left="10dp"
+                android:top="10dp"
+                android:right="10dp"
+                android:bottom="10dp"/>
+            </shape>
+    </item>
+    <item android:state_focused="true">
+        <shape android:shape="rectangle">
+            <!-- 填充颜色-->
+            <solid android:color="#48BAF3"/>
+            <!-- 设置按钮的四个角为弧形-->
+            <corners android:radius="5dip"/>
+
+            <padding
+                android:left="10dp"
+                android:top="10dp"
+                android:right="10dp"
+                android:bottom="10dp"/>
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <!-- 填充颜色-->
+            <solid android:color="#FFFFFF"/>
+            <!-- 设置按钮的四个角为弧形-->
+            <corners android:radius="5dip"/>
+
+            <padding
+                android:left="10dp"
+                android:top="10dp"
+                android:right="10dp"
+                android:bottom="10dp"/>
+        </shape>
+    </item>
+</selector>
