@@ -1,14 +1,13 @@
 package com.miraclewong.viewanimationdemo;
 
 import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorInflater;
+import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
 import android.animation.ValueAnimator;
 import android.app.Activity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
@@ -28,16 +27,9 @@ public class MainActivity extends Activity {
 
 
     public void btnAlpha(final View view) {
-//        AlphaAnimation aa = new AlphaAnimation(0, 1);
-//        aa.setDuration(1000);
-//        view.startAnimation(aa);
-        ObjectAnimator animator = ObjectAnimator.ofFloat(view, "alpha", 0.5f);
-        animator.addListener(new AnimatorListenerAdapter() {
-            @Override
-            public void onAnimationEnd(Animator animation) {
-                super.onAnimationEnd(animation);
-            }
-        });
+        AlphaAnimation aa = new AlphaAnimation(0, 1);
+        aa.setDuration(1000);
+        view.startAnimation(aa);
     }
 
     public void btnRotate(final View view) {
@@ -103,31 +95,24 @@ public class MainActivity extends Activity {
         animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
-                Float value =(Float)animation.getAnimatedValue();
-                Toast.makeText(MainActivity.this, value+"", Toast.LENGTH_SHORT).show();
+                Float value = (Float) animation.getAnimatedValue();
+                Toast.makeText(MainActivity.this, value + "", Toast.LENGTH_SHORT).show();
             }
         });
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
+    public void btnAnimatorSet(final View view){
+        ObjectAnimator animator1 = ObjectAnimator.ofFloat(view, "translationX", 300f);
+        ObjectAnimator animator2 = ObjectAnimator.ofFloat(view, "scaleX", 1f, 0f, 1f);
+        ObjectAnimator animator3 = ObjectAnimator.ofFloat(view, "scaleY", 1f, 0f, 1f);
+        AnimatorSet set = new AnimatorSet();
+        set.setDuration(1000);
+        set.playTogether(animator1, animator2, animator3);
+        set.start();
     }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
+    public void btnXML(final View view){
+        Animator animator = AnimatorInflater.loadAnimator(this, R.animator.scalex);
+        animator.setTarget(view);
+        animator.start();
     }
 }
