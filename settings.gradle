@@ -1,1 +1,1 @@
-include ':app', ':mylistview', ':recyclerviewtest', ':game2048', ':systemwidget', ':android2048', ':imageshape'
+include ':app', ':mylistview', ':recyclerviewtest', ':game2048', ':systemwidget', ':android2048', ':imageshape', ':notificationdemo', ':viewanimationdemo'

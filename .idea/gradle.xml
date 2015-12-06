@@ -14,8 +14,10 @@
             <option value="$PROJECT_DIR$/game2048" />
             <option value="$PROJECT_DIR$/imageshape" />
             <option value="$PROJECT_DIR$/mylistview" />
+            <option value="$PROJECT_DIR$/notificationdemo" />
             <option value="$PROJECT_DIR$/recyclerviewtest" />
             <option value="$PROJECT_DIR$/systemwidget" />
+            <option value="$PROJECT_DIR$/viewanimationdemo" />
           </set>
         </option>
       </GradleProjectSettings>

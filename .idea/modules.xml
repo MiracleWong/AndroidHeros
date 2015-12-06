@@ -8,8 +8,10 @@
       <module fileurl="file://$PROJECT_DIR$/game2048/game2048.iml" filepath="$PROJECT_DIR$/game2048/game2048.iml" />
       <module fileurl="file://$PROJECT_DIR$/imageshape/imageshape.iml" filepath="$PROJECT_DIR$/imageshape/imageshape.iml" />
       <module fileurl="file://$PROJECT_DIR$/mylistview/mylistview.iml" filepath="$PROJECT_DIR$/mylistview/mylistview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/notificationdemo/notificationdemo.iml" filepath="$PROJECT_DIR$/notificationdemo/notificationdemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/recyclerviewtest/recyclerviewtest.iml" filepath="$PROJECT_DIR$/recyclerviewtest/recyclerviewtest.iml" />
       <module fileurl="file://$PROJECT_DIR$/systemwidget/systemwidget.iml" filepath="$PROJECT_DIR$/systemwidget/systemwidget.iml" />
+      <module fileurl="file://$PROJECT_DIR$/viewanimationdemo/viewanimationdemo.iml" filepath="$PROJECT_DIR$/viewanimationdemo/viewanimationdemo.iml" />
     </modules>
   </component>
 </project>
