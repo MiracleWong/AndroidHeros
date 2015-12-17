@@ -24,8 +24,8 @@
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Headsup"
-        android:onClick="headsupNotify" />
+        android:text="HeadsUp"
+        android:onClick="headsUpNotify" />
 
     <RadioGroup
         android:id="@+id/visibility_radio_group"

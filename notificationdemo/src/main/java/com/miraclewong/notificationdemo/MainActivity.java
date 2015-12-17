@@ -6,11 +6,13 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.RadioGroup;
 import android.widget.RemoteViews;
 
 public class MainActivity extends Activity {
@@ -46,7 +48,7 @@ public class MainActivity extends Activity {
         builder.setContentTitle("Basic Notifications");
         builder.setContentText("I am a basic notification");
         builder.setSubText("it is really basic");
-        builder.setTicker("dsfadsaf");
+        builder.setColor(Color.GREEN);          // 背景颜色
         // 通过NotificationManager来发出Notification
         NotificationManager notificationManager =
                 (NotificationManager) getSystemService(
@@ -85,7 +87,55 @@ public class MainActivity extends Activity {
                         NOTIFICATION_SERVICE);
         notificationManager.notify(NOTIFICATION_ID_COLLAPSE,
                 notification);
+    }
 
+    public void headsUpNotify(View view) {
+        Intent intent = new Intent();
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.setClass(this, MainActivity.class);
+        PendingIntent pendingIntent = PendingIntent.getActivity(
+                this, 0, intent, PendingIntent.FLAG_CANCEL_CURRENT);
+
+        Notification.Builder builder = new Notification.Builder(this)
+                .setSmallIcon(R.mipmap.ic_launcher)
+                .setPriority(Notification.PRIORITY_DEFAULT)
+                .setCategory(Notification.CATEGORY_MESSAGE)
+                .setContentTitle("HeadsUp Notification")
+                .setContentText("I am HeadsUp Notification.")
+                .setFullScreenIntent(pendingIntent, true);
+
+        NotificationManager nm = (NotificationManager)
+                getSystemService(NOTIFICATION_SERVICE);
+        nm.notify(NOTIFICATION_ID_HEADSUP, builder.build());
+
+    }
+
+    public void visibilityNotify(View view){
+        RadioGroup radioGroup = (RadioGroup) findViewById(R.id.visibility_radio_group);
+        Notification.Builder builder = new Notification.Builder(this).
+                setContentTitle("Notification for Visibility Test");
+        switch (radioGroup.getCheckedRadioButtonId()){
+            case R.id.radio_button_public:
+                builder.setVisibility(Notification.VISIBILITY_PUBLIC);
+                builder.setContentText("Public");
+                builder.setSmallIcon(R.mipmap.ic_public);
+                break;
+            case R.id.radio_button_private:
+                builder.setVisibility(Notification.VISIBILITY_PRIVATE);
+                builder.setContentText("Private");
+                builder.setSmallIcon(R.mipmap.ic_private);
+                break;
+            case R.id.radio_button_secret:
+                builder.setVisibility(Notification.VISIBILITY_SECRET);
+                builder.setContentText("Secret");
+                builder.setSmallIcon(R.mipmap.ic_secret);
+                break;
+            default:
+                break;
+        }
+
+        NotificationManager notificationManager = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
+        notificationManager.notify(NOTIFICATION_ID_VISIBILITY, builder.build());
     }
 
 
@@ -103,12 +153,10 @@ public class MainActivity extends Activity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 }
