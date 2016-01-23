@@ -10,41 +10,48 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="btnTeaching"
-        android:text="Teaching" />
+        android:text="Teaching"
+        android:textAllCaps="false"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="btnTopBar"
-        android:text="TopBar" />
+        android:text="TopBar"
+        android:textAllCaps="false"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="btnMyTextView"
-        android:text="MyTextView" />
+        android:text="MyTextView"
+        android:textAllCaps="false"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="btnShineTextView"
-        android:text="ShineTextView" />
+        android:text="ShineTextView"
+        android:textAllCaps="false"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="btnCircleProgress"
-        android:text="CircleProgress" />
+        android:text="CircleProgress"
+        android:textAllCaps="false"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="btnVolumeView"
-        android:text="VolumeView" />
+        android:text="VolumeView"
+        android:textAllCaps="false"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="btnMyScrollView"
-        android:text="MyScrollView" />
+        android:text="MyScrollView"
+        android:textAllCaps="false" />
 </LinearLayout>

@@ -27,9 +27,9 @@ public class MyViewTest extends Activity {
             case 4:
                 setContentView(R.layout.volume);
                 break;
-//            case 5:
-//                setContentView(R.layout.my_scrollview);
-//                break;
+            case 5:
+                setContentView(R.layout.my_scrollview);
+                break;
         }
     }
 }
