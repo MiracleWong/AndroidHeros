@@ -1,0 +1,25 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <com.miraclewong.systemwidget.view.MyViewGroupA
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/holo_blue_bright"
+        >
+        <com.miraclewong.systemwidget.view.MyViewGroupB
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:background="@android:color/holo_blue_dark">
+            <com.miraclewong.systemwidget.view.MyView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:background="@android:color/darker_gray"/>
+
+        </com.miraclewong.systemwidget.view.MyViewGroupB>
+    </com.miraclewong.systemwidget.view.MyViewGroupA>
+</LinearLayout>
